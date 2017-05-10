@@ -29,21 +29,21 @@
       background-position: center center;
       margin-top: 0px;
     }
-    .bg {
+    .nav-bg {
       background: transparent;
       border:none;
       width: 100%;
       opacity: 0.8;
     }
-    .bg li a,.navbar-brand{
+    .nav-bg li a,.navbar-brand{
       padding: 30px 20px;
       color:white!important;
     }
-    .show {
+    .scrollNavEffectshow {
       opacity: 0.8;
       background: teal;
     }
-    .show a{
+    .scrollNavEffectshow a{
       color:white!important;
     }
     .active a{
@@ -66,7 +66,7 @@
         <div class="scroll-top-bg"> </div>
       </div>
 
-         <nav class="navbar navbar-default navbar-fixed-top bg transition">
+         <nav class="navbar navbar-default navbar-fixed-top nav-bg transition">
            <div class="container-fluid">
              <div class="navbar-header">
                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -103,9 +103,9 @@
     $('.scroll-top-bg').css('top', -(scrollTop * 2) + 'px');
 
     if ($(window).scrollTop() > 500 ){
-      $('.bg').addClass('show');
+      $('.bg').addClass('scrollNavEffectshow');
     } else {
-      $('.bg').removeClass('show');
+      $('.bg').removeClass('scrollNavEffectshow');
     };    
   });
  
