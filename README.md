@@ -4,15 +4,19 @@
 
 > # 1. Just write code (HTML):
 ```s
-   <header>
+    <header>
       <div class="scroll-top"> 
         <div class="scroll-top-bg"> </div>
       </div>
 
-         <nav class="navbar navbar-default navbar-fixed-top scrollNavEffectshow transition">
+         <nav class="navbar navbar-default navbar-fixed-top navbar-bg transition">
          .....
          </nav>
     </header>
+    
+    <section style="height:1000px;"> 
+ 
+    </section>
 ```
 
 > #  2. Just write code (CSS):
@@ -39,21 +43,28 @@
       background-position: center center;
       margin-top: 0px;
     }
-    .nav-bg {
+    .navbar-bg {
       background: transparent;
       border:none;
       width: 100%;
       opacity: 0.8;
     }
-    .nav-bg li a,.navbar-brand{
+    .navbar-bg li a{
       padding: 30px 20px;
       color:white!important;
     }
+   .navbar-brand{
+      padding: 20px 20px;
+      color:white!important;
+    }
+
     .scrollNavEffectshow {
       opacity: 0.8;
       background: teal;
     }
-    .scrollNavEffectshow a{
+    .scrollNavEffectshow li a{
+      padding: 20px 20px;
+      transition: 2s;
       color:white!important;
     }
     .active a{
@@ -78,9 +89,9 @@
     $('.scroll-top-bg').css('top', -(scrollTop * 2) + 'px');
 
     if ($(window).scrollTop() > 500 ){
-      $('.bg').addClass('scrollNavEffectshow');
+      $('.navbar-bg').addClass('scrollNavEffectshow');
     } else {
-      $('.bg').removeClass('scrollNavEffectshow');
+      $('.navbar-bg').removeClass('scrollNavEffectshow');
     };    
   });
  
