@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Scroll Nav with Parallax effect</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    .scroll-top{
+      position: relative;
+      width: 100%;
+      height:100vh;
+      background-color: #333;
+      overflow: hidden;
+    }
+    .scroll-top-bg{
+      position:absolute;
+      width:100%;
+      height:300%;
+      background-size: 200% 100%;
+      background-image: url('img/banner_parallax.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      margin-top: 0px;
+    }
+    .bg {
+      background: transparent;
+      border:none;
+      width: 100%;
+      opacity: 0.8;
+    }
+    .bg li a,.navbar-brand{
+      padding: 30px 20px;
+      color:white!important;
+    }
+    .show {
+      opacity: 0.8;
+      background: teal;
+    }
+    .show a{
+      color:white!important;
+    }
+    .active a{
+      background-color:black!important;
+    }
+
+    .transition {    
+      -webkit-transition: all 0.8s ease-in-out;
+      -moz-transition: all 0.8s ease-in-out;
+      -o-transition: all 0.8s ease-in-out;
+      transition: all 0.8s ease-in-out;
+    }
+
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+      <div class="scroll-top"> 
+        <div class="scroll-top-bg"> </div>
+      </div>
+
+         <nav class="navbar navbar-default navbar-fixed-top bg transition">
+           <div class="container-fluid">
+             <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span> 
+               </button>
+               <a class="navbar-brand" href="#"> Scroll Nav </a>
+             </div>
+             <div class="collapse navbar-collapse" id="myNavbar">
+               <ul class="nav navbar-nav">
+                 <li class="active"><a href="#">Home</a></li>
+                 <li><a href="#">Page 1</a></li>
+                 <li><a href="#">Page 2</a></li> 
+                 <li><a href="#">Page 3</a></li> 
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                 <li><a href="#"> Sign Up</a></li>
+                 <li><a href="#"> Login</a></li>
+               </ul>
+             </div>
+           </div>
+         </nav>
+  </header>
+      
+ <section style="height:1000px;"> 
+ 
+ </section>
+</div>
+
+<script type="text/javascript">
+  $(window).scroll(function() {
+    var scrollTop = $(this).scrollTop();
+    $('.scroll-top-bg').css('top', -(scrollTop * 2) + 'px');
+
+    if ($(window).scrollTop() > 500 ){
+      $('.bg').addClass('show');
+    } else {
+      $('.bg').removeClass('show');
+    };    
+  });
+ 
+  </script>
+</body>
+</html>
